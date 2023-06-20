@@ -88,6 +88,12 @@ ON students.student_id=marks_info.student_id;
 
 SELECT marks_info.student_id, students.name,students.age
 FROM students
-CROSS JOIN marks_info
+CROSS JOIN marks_info;
+
+--Implementation of FULL OUTER JOIN
+
+SELECT marks_info.student_id, students.name,students.age
+FROM students
+FULL OUTER JOIN marks_info
 ON students.student_id=marks_info.student_id;
 
