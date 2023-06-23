@@ -1,0 +1,161 @@
+use car
+'switched to db car'
+db.carcollections.insertMany([{name: 'Hyundai Aura',
+  model: 'S',
+  rented_user_count: 2,
+  mileage: 19,
+  transmission: 'automatic',
+  rent: 900,
+  fuel: 'petrol',},{name: 'Tata Safari',
+  model: 'XT Plus',
+  rented_user_count: 3,
+  mileage: 18,
+  transmission: 'manual',
+  rent: 800,
+  fuel: 'diesal'}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64959f6cacdcf7993e4155b4"),
+    '1': ObjectId("64959f6cacdcf7993e4155b5")
+  }
+}
+db.carcollections.find();
+{
+  _id: ObjectId("64959f6cacdcf7993e4155b4"),
+  name: 'Hyundai Aura',
+  model: 'S',
+  rented_user_count: 2,
+  mileage: 19,
+  transmission: 'automatic',
+  rent: 900,
+  fuel: 'petrol'
+}
+{
+  _id: ObjectId("64959f6cacdcf7993e4155b5"),
+  name: 'Tata Safari',
+  model: 'XT Plus',
+  rented_user_count: 3,
+  mileage: 18,
+  transmission: 'manual',
+  rent: 800,
+  fuel: 'diesal'
+}
+db.carcollections.insertOne({name: 'Honda Amaze',
+  model: 'CVT',
+  rented_user_count: 5,
+  mileage: 20,
+  transmission: 'manual',
+  rent: 700,
+  fuel: 'petrol',});
+{
+  acknowledged: true,
+  insertedId: ObjectId("6495a019acdcf7993e4155b6")
+}
+db.carcollections.find();
+{
+  _id: ObjectId("64959f6cacdcf7993e4155b4"),
+  name: 'Hyundai Aura',
+  model: 'S',
+  rented_user_count: 2,
+  mileage: 19,
+  transmission: 'automatic',
+  rent: 900,
+  fuel: 'petrol'
+}
+{
+  _id: ObjectId("64959f6cacdcf7993e4155b5"),
+  name: 'Tata Safari',
+  model: 'XT Plus',
+  rented_user_count: 3,
+  mileage: 18,
+  transmission: 'manual',
+  rent: 800,
+  fuel: 'diesal'
+}
+{
+  _id: ObjectId("6495a019acdcf7993e4155b6"),
+  name: 'Honda Amaze',
+  model: 'CVT',
+  rented_user_count: 5,
+  mileage: 20,
+  transmission: 'manual',
+  rent: 700,
+  fuel: 'petrol'
+}
+db.carcollections.updateOne({name:'Hyundai Aura'},{$set :{rent:1000}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.carcollections.find();
+{
+  _id: ObjectId("64959f6cacdcf7993e4155b4"),
+  name: 'Hyundai Aura',
+  model: 'S',
+  rented_user_count: 2,
+  mileage: 19,
+  transmission: 'automatic',
+  rent: 1000,
+  fuel: 'petrol'
+}
+{
+  _id: ObjectId("64959f6cacdcf7993e4155b5"),
+  name: 'Tata Safari',
+  model: 'XT Plus',
+  rented_user_count: 3,
+  mileage: 18,
+  transmission: 'manual',
+  rent: 800,
+  fuel: 'diesal'
+}
+{
+  _id: ObjectId("6495a019acdcf7993e4155b6"),
+  name: 'Honda Amaze',
+  model: 'CVT',
+  rented_user_count: 5,
+  mileage: 20,
+  transmission: 'manual',
+  rent: 700,
+  fuel: 'petrol'
+}
+db.carcollections.deleteOne({name:'Tata Safari'});
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.carcollections.find();
+{
+  _id: ObjectId("64959f6cacdcf7993e4155b4"),
+  name: 'Hyundai Aura',
+  model: 'S',
+  rented_user_count: 2,
+  mileage: 19,
+  transmission: 'automatic',
+  rent: 1000,
+  fuel: 'petrol'
+}
+{
+  _id: ObjectId("6495a019acdcf7993e4155b6"),
+  name: 'Honda Amaze',
+  model: 'CVT',
+  rented_user_count: 5,
+  mileage: 20,
+  transmission: 'manual',
+  rent: 700,
+  fuel: 'petrol'
+}
+db.carcollections.find({transmission:'manual'});
+{
+  _id: ObjectId("6495a019acdcf7993e4155b6"),
+  name: 'Honda Amaze',
+  model: 'CVT',
+  rented_user_count: 5,
+  mileage: 20,
+  transmission: 'manual',
+  rent: 700,
+  fuel: 'petrol'
+}
